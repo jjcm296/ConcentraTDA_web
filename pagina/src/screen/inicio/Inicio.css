@@ -352,3 +352,42 @@
     }
 }
 
+/* ==========================================
+   Botón de Credenciales de Prueba
+   (Estilo idéntico al botón de Descargar)
+   ========================================== */
+.btn-credenciales {
+    /* Mismo estilo base que el botón de descargar */
+    background-color: #3b5b8c; /* Azul oscuro similar al de tu diseño */
+    color: #ffffff;
+    font-family: inherit; /* Hereda la fuente de la página */
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px; /* Bordes muy redondeados como el original */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
+
+    /* Separación del contador de descargas */
+    margin-top: 15px;
+}
+
+/* Efecto al pasar el mouse */
+.btn-credenciales:hover {
+    background-color: #2c446b; /* Un tono más oscuro al hacer hover */
+    transform: translateY(-2px); /* Pequeño salto */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al hacer clic */
+.btn-credenciales:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+

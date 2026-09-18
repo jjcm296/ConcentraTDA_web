@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import QuoteCards from './QuoteCards';
 import './Inicio.css';
 import DownloadCounter from './components/DownloadCounter';
+import CredencialesModal from './components/CredencialesModal'; // 1. Importamos el modal
 
 const Inicio = ({ scrollToDownload, counterRef }) => {
 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [modalOpen, setModalOpen] = useState(false); // 2. Estado para abrir/cerrar el modal
     const downloadRef = useRef(null);
 
     useEffect(() => {
@@ -23,7 +25,6 @@ const Inicio = ({ scrollToDownload, counterRef }) => {
         }
     }, [scrollToDownload]);
 
-
     const bgImage = isMobile ? '/bg_ph_0.png' : '/bg_pc2.png';
 
     return (
@@ -39,6 +40,16 @@ const Inicio = ({ scrollToDownload, counterRef }) => {
                         <div ref={downloadRef}>
                             <DownloadCounter ref={counterRef} />
                         </div>
+
+                        {/* 3. Botón de Credenciales con la MISMA clase que el de Descargar */}
+                        {/* Si tu botón de descarga usa otra clase (ej. "download-button"), cámbiala aquí 👇 */}
+                        <button
+                            className="btn-credenciales"
+                            onClick={() => setModalOpen(true)}
+                            style={{ marginTop: '12px' }}
+                        >
+                            Ver Credenciales de Prueba
+                        </button>
                     </div>
                 </div>
             </section>
@@ -102,6 +113,12 @@ const Inicio = ({ scrollToDownload, counterRef }) => {
 
                 </div>
             </section>
+
+            {/* 4. Modal de credenciales (renderizado al final del componente) */}
+            <CredencialesModal
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+            />
         </>
     );
 };
