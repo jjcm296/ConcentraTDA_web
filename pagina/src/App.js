@@ -10,7 +10,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 function App() {
-    const [scrollToDownload, setScrollToDownload] = useState(false);
     const downloadCounterRef = useRef(null);
 
     const triggerScrollToDownload = () => {
