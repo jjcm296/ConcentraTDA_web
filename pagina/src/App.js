@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Inicio from './screen/inicio/Inicio';
 import SobreTDA from './screen/sobretda/SobreTda';
@@ -12,13 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function App() {
     const downloadCounterRef = useRef(null);
 
-    const triggerScrollToDownload = () => {
-        setScrollToDownload(true);
-        setTimeout(() => setScrollToDownload(false), 1000);
-    };
-
     const handleDownloadClick = () => {
-        triggerScrollToDownload();
         if (downloadCounterRef.current) {
             downloadCounterRef.current.increment();
         }

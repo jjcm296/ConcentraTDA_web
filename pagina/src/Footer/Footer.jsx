@@ -17,7 +17,7 @@ const Footer = () => {
                     <FaInstagram />
                 </a>
 
-                
+
                 <a
                     href="https://www.facebook.com/share/15K3BNLk4U/?mibextid=wwXIfr"
                     target="_blank"
